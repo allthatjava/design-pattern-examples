@@ -7,6 +7,9 @@ import brian.example.java.design.pattern.designpatternexamples.decorator.PlainPi
 import brian.example.java.design.pattern.designpatternexamples.factory.Ship;
 import brian.example.java.design.pattern.designpatternexamples.factory.ShipFactory;
 import brian.example.java.design.pattern.designpatternexamples.observer.*;
+import brian.example.java.design.pattern.designpatternexamples.prototype.Bus;
+import brian.example.java.design.pattern.designpatternexamples.prototype.Car;
+import brian.example.java.design.pattern.designpatternexamples.prototype.GpsSystem;
 import brian.example.java.design.pattern.designpatternexamples.singleton.Singleton;
 import brian.example.java.design.pattern.designpatternexamples.strategy.Animal;
 import brian.example.java.design.pattern.designpatternexamples.strategy.Bird;
@@ -22,17 +25,6 @@ public class DesignPatternExamplesApplication {
         Pizza pizza = new BaconStrip(new Pepperoni(new PlainPizza()));
         System.out.println("Pizza has "+pizza.getDescription());
         System.out.println("Pizza cost "+pizza.getCost());
-
-        // Strategy Pattern
-        System.out.println("Strategy Pattern ========== ");
-        Animal dog = new Dog();
-        Animal bird = new Bird();
-        System.out.println("Dog:"+dog.fly());
-        System.out.println("Bird:"+bird.fly());
-
-        dog.setFlyable(new Flys());
-        System.out.println("After switching the strategy...");
-        System.out.println("Dog:"+dog.fly());
 
         // Factory Pattern
         System.out.println("Factory Pattern ========== ");
@@ -62,6 +54,22 @@ public class DesignPatternExamplesApplication {
         chABC.addVideo("New Video2");
         chDEF.addVideo("New VideoA");
 
+        // Prototype Pattern
+        Car car1 = new Car("Toyota", "Yaris", "Black", 200, new GpsSystem("Toronto"));
+        Bus bus1 = new Bus( "SomeBranch", "School bus", "Yellow", 2);
+
+        Car car1Clone = car1.clone();
+        Bus bus1Clone = bus1.clone();
+        car1.getGpsSystem().setStartingCity("New York");
+        car1Clone.setTopSpeed(100);
+        bus1Clone.setDoors(3);
+
+        System.out.println(car1);
+        System.out.println(car1Clone);
+        System.out.println(bus1);
+        System.out.println(bus1Clone);
+
+
         // Singleton Pattern
         System.out.println("Singleton Pattern ========= ");
         Singleton singleton1 = Singleton.getInstance();
@@ -72,6 +80,17 @@ public class DesignPatternExamplesApplication {
         singleton2.setName("Singleton 2");
         System.out.println("Singleton1:"+singleton1);
         System.out.println("Singleton2:"+singleton2);
+
+        // Strategy Pattern
+        System.out.println("Strategy Pattern ========== ");
+        Animal dog = new Dog();
+        Animal bird = new Bird();
+        System.out.println("Dog:"+dog.fly());
+        System.out.println("Bird:"+bird.fly());
+
+        dog.setFlyable(new Flys());
+        System.out.println("After switching the strategy...");
+        System.out.println("Dog:"+dog.fly());
     }
 
 }

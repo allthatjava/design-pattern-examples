@@ -8,7 +8,7 @@ public class Car extends Vehicle{
     public Car(Car car){
         super(car);
         this.topSpeed = car.topSpeed;
-        this.gpsSystem = new GpsSystem(car.gpsSystem.getStartingCity());
+        this.gpsSystem = new GpsSystem(car.gpsSystem.getStartingCity());    // For deep copy
     }
 
     public Car(String brand, String model, String color, int topSpeed, GpsSystem gpsSystem){
@@ -18,7 +18,7 @@ public class Car extends Vehicle{
     }
 
     @Override
-    public Car clone(){
+    public Car copy(){
         return new Car(this);
     }
 

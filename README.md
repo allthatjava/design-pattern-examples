@@ -19,3 +19,7 @@ Source Code: `brin/example/design/pattern/designpatterexample/strategy`
 ### Observer Pattern
 Source Code: `brin/example/design/pattern/designpatterexample/observer`  
 ![img/Observer_Pattern.drawio.png](img/Observer_Pattern.drawio.png)
+
+### Prototype Pattern
+Source Code: `brin/example/design/pattern/designpatterexample/prototype`  
+![img/Prototype_Pattern.drawio.png](img/Prototype_Pattern.drawio.png)

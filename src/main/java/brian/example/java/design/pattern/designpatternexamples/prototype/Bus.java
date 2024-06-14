@@ -14,7 +14,7 @@ public class Bus extends Vehicle{
     }
 
     @Override
-    public Bus clone(){
+    public Bus copy(){
         return new Bus(this);
     }
 

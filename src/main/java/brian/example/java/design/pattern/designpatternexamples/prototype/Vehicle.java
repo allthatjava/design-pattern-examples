@@ -5,7 +5,7 @@ public abstract class Vehicle{
     protected String model;
     protected String color;
 
-    public Vehicle(){}
+    protected Vehicle(){}
 
     protected Vehicle(Vehicle vehicle){
         this.brand = vehicle.brand;
@@ -19,5 +19,5 @@ public abstract class Vehicle{
         this.color = color;
     }
 
-    public abstract Vehicle clone();
+    public abstract Vehicle copy();
 }

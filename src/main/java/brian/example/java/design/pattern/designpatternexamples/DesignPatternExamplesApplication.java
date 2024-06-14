@@ -58,9 +58,9 @@ public class DesignPatternExamplesApplication {
         Car car1 = new Car("Toyota", "Yaris", "Black", 200, new GpsSystem("Toronto"));
         Bus bus1 = new Bus( "SomeBranch", "School bus", "Yellow", 2);
 
-        Car car1Clone = car1.clone();
-        Bus bus1Clone = bus1.clone();
-        car1.getGpsSystem().setStartingCity("New York");
+        Car car1Clone = car1.copy();
+        Bus bus1Clone = bus1.copy();
+        car1.getGpsSystem().setStartingCity("New York");    // for deep copy testing
         car1Clone.setTopSpeed(100);
         bus1Clone.setDoors(3);
 

@@ -1,6 +1,6 @@
 package brian.example.java.design.pattern.designpatternexamples.prototype;
 
-public class GpsSystem implements Cloneable{
+public class GpsSystem {
     private String startingCity;
 
     public GpsSystem(String startingCity){
